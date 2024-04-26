@@ -9,9 +9,9 @@
 
 .text{
     font-family: "Roboto", sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
-  font-size: 23px;
+  font-size: 25px;
   margin-left: 90px;
   position: relative;
   
@@ -31,7 +31,7 @@ input#esp_email{
     font-style: normal;
     font-size: 16px;
     margin-left: 85px;
-    border-radius: 10px;
+    border-radius: 5px;
     border-style:inset;
     height: 50px;
     width: 500px;
@@ -59,8 +59,7 @@ input#esp_senha{
     font-style: normal;
     font-size: 16px;
     margin-left: 85px;
-    border-radius: 10px;
-    border-style:inset;
+    border-radius: 5px;
     height: 50px;
     width: 500px;
     background-color: rgb(230, 230, 238);
@@ -71,7 +70,7 @@ input#esp_senha:hover{
 }
 .see{
     font-family: "Roboto", sans-serif;
-    font-weight: 430;
+    font-weight: 410;
     font-style: normal;
     font-size: 18px;
     margin-top: 30px;
@@ -84,35 +83,34 @@ input#esp_senha:hover{
     font-size: 15px;
     margin-top: 30px;
     margin-left: 85px;
-   
-
 }
 input#formato_buttom{
     border-radius: 200px;
     background-color: rgb(241, 241, 241);
     height: 45px;
-    width: 300px;
-   
-    
-    
+    width: 280px;
 }
 input#formato_buttom:hover{
     background-color: rgb(227, 227, 227);
 }
 img#logogoogle{
-    height: 30px;
-    width: 30px;
-    margin-left: 8px;
+    height: 25px;
+    width: 25px;
+    margin-top: 23px;
+    margin-left: 327px;
+    position: absolute;
+    justify-content: left;
     
 }
 .botaologin{
-   margin-top: 50px; 
+   margin-top: 40px; 
+   margin-left: px;
 
 }
 input#conflogin{
 background-color: rgb(19, 16, 65);
 height: 60px;
-width: 460px;
+width: 200px;
 border-radius: 100px;
 color: white;
 font-family: "Roboto", sans-serif;
@@ -136,10 +134,8 @@ input#conflogin:hover{
 }
 
 #forgotPassword{
-    margin-left: px;
-  
+    
   text-align: center;
-  
   color: #004289; 
   font-family: "Roboto", sans-serif;
   font-weight: 450;
@@ -154,32 +150,25 @@ input#conflogin:hover{
 .pagesquerda{
     
     position: absolute;
-    background-color: rgb(19, 16, 65);
+    background-color: rgb(9, 7, 45);
     justify-content: left;
     height: 100%;
     width: 5vh; 
 }
 .pagdireita{
     position:absolute;
-    background-color: rgb(19, 16, 65);
-
-height: 100vh;
-width: 7vh;
-margin-left:1577px;
-
-
-
-    
+    background-color: rgb(9, 7, 45);
+    height: 100vh;
+    width: 5vh;
+    margin-left:1593px;
 
 }
-
-
 img#img2{
     position: absolute;
-    width: 120vh;
-    height: 80vh;
+    width: 110vh;
+    height: 75vh;
     justify-content: right;
-    margin-left: 585px;
+    margin-left: 630px;
     margin-top: 100px;
 }
 #CriarumaConta{
@@ -188,7 +177,7 @@ img#img2{
     font-weight: 450;
     font-style: normal;
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 7px;
     margin-top: 40px;
 }
 #CriarumaConta:hover{
@@ -196,5 +185,5 @@ img#img2{
 }
 .fonts{
     font-family: "Roboto", sans-serif;
-    font-weight: 420;
+    font-weight: 410;
 }

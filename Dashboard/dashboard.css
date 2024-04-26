@@ -1,0 +1,83 @@
+.menucima{
+    background-color: rgba(42, 48, 66);
+    height: 8vh;
+}
+img#bandeirabrasil{
+    width: 21px;
+    height: 15px;
+    position: absolute;
+    margin-left: 550px;
+    margin-top:25px ;
+    border-radius: 1000px;
+    transition: 0.4s;
+}
+img#bandeirabrasil:hover{
+    width: 24px;
+    height: 18px;
+    position: absolute;
+    margin-left: 549px;
+    margin-top:24px ;
+    border-radius: 1000px;
+    transition: 0.4s;
+}
+img#logoconforme{
+    margin-left: 130px;
+    position: absolute;
+    margin-top: 5px;
+    
+}
+input#barrabuscar{
+    margin-left: 330px;
+    margin-top: 18px;
+    border: 0;
+    outline: 0;
+    background: none;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    /*background-color: white;*/
+    border-radius: 5px;
+    height: 28px;
+    width: 300px;
+    transition: 0.1s;
+    
+    
+
+    
+}
+input#barrabuscar:hover{
+    background-color: white;
+    transition: 0.1s;
+    cursor: pointer;
+    padding-left: 10px;
+}
+img#lupa{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 400px;
+    left: 0;
+    margin-top: 23px;
+    margin-left: 298px;
+    
+}
+img#conf{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin-top: 19px;
+    margin-right: 150px;
+    transition: 0.4s;
+
+}
+img#conf:hover{
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 0;
+    margin-top: 17px;
+    margin-right: 149px;
+    transition: 0.4s;
+}
