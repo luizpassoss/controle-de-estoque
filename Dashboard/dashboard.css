@@ -81,3 +81,86 @@ img#conf{
     margin-right: 149px;
     transition: 0.4s;
 }*/
+
+
+main{
+    background-color: rgb(245, 245, 249);
+    height: 91vh;
+    width:100vw;
+}
+.bloco0{
+    background-color: rgb(255, 255, 255);
+    height: 6vh;
+    width: 100vw;
+    position: absolute;
+
+}
+.textdashboard{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 70px;
+    color: rgb(102, 102, 102);
+}
+.bloco1{
+    position: absolute;
+    background-color: white;
+    height: 20vh;
+    width: 30vw;
+    margin-left: 70px;
+    margin-top: 120px;
+    border-radius: 10px;
+}
+.textd{
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 135px;
+    color: rgb(102, 102, 102);
+    margin-top: 14px;
+
+}
+.textdoações{
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 300px;
+    color: rgb(102, 102, 102);
+    margin-top: 14px;
+
+}
+.textapp{
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 450px;
+    color: rgb(102, 102, 102);
+    margin-top: 14px;
+}
+img#flecha1{
+    height: 20px;
+    width: 14px;
+    position: absolute;
+    margin-left: 78px;
+}
+img#flecha2{
+    height: 20px;
+    width: 14px;
+    position: absolute;
+    margin-left: 65px;
+}
+img#flecha3{
+    height: 20px;
+    width: 14px;
+    position: absolute;
+    margin-left: 80px;
+}
