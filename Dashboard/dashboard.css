@@ -37,7 +37,7 @@ input#barrabuscar{
     font-weight: 400;
     color: rgb(0, 0, 0);
     /*background-color: white;*/
-    border-radius: 40px;
+    border-radius: 5px;
     height: 28px;
     width: 300px;
     transition: 0.1s;
@@ -108,11 +108,18 @@ main{
 .bloco1{
     position: absolute;
     background-color: white;
-    height: 20vh;
-    width: 30vw;
+    height: 25vh;
+    width: 33vw;
     margin-left: 70px;
     margin-top: 120px;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 13.7px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(50, 50, 50);
 }
 .textd{
     position: absolute;
@@ -120,7 +127,7 @@ main{
     font-weight: 500;
     font-style: normal;
     font-size: 15px;
-    margin-left: 135px;
+    margin-left: 165px;
     color: rgb(102, 102, 102);
     margin-top: 14px;
 
@@ -131,7 +138,7 @@ main{
     font-weight: 500;
     font-style: normal;
     font-size: 15px;
-    margin-left: 300px;
+    margin-left: 317px;
     color: rgb(102, 102, 102);
     margin-top: 14px;
 
@@ -163,4 +170,96 @@ img#flecha3{
     width: 14px;
     position: absolute;
     margin-left: 80px;
+}
+.bloco2{
+    position: absolute;
+    background-color: white;
+    height: 25vh;
+    width: 33vw;
+    margin-left: 70px;
+    margin-top: 350px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 13.7px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(50, 50, 50);
+}
+.bloco3{
+    position: absolute;
+    background-color: white;
+    height: 50vh;
+    width: 57.8vw;
+    margin-left: 650px;
+    margin-top: 240px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 13.7px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(50, 50, 50);
+}
+.bloco4{
+    position: absolute;
+    background-color: white;
+    height: 11vh;
+    width: 18vw;
+    margin-left: 650px;
+    margin-top: 120px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(102, 102, 102);
+}
+.bloco5{
+    position: absolute;
+    background-color: white;
+    height: 11vh;
+    width: 18vw;
+    margin-left: 975px;
+    margin-top: 120px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(102, 102, 102);
+}
+.bloco6{
+    position: absolute;
+    background-color: white;
+    height: 11vh;
+    width: 18vw;
+    margin-left: 1300px;
+    margin-top: 120px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(102, 102, 102);
+}
+.pd{
+    font-family: "Roboto", sans-serif;
+    font-weight: 420;
+    font-style: normal;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: rgb(102, 102, 102);
+    position: absolute; 
+    margin-top: 67px;
+    margin-left: 89.8vw;
 }
