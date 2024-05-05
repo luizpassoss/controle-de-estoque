@@ -51,28 +51,43 @@
         <div class="LoginInput">
 
             <p class="email">Email</p>
-                <input type="text" name="emailUser" id="esp_email" placeholder="Coloque seu email">
+                <input type="text" name="emailUser" id="emailUser" placeholder="Coloque seu email">
                
 
                 <p class="senha">Senha</p>
-                <input type="text" name="senhaUser" id="esp_senha"placeholder="Mínimo 8 carateres">
+                <input type="password" name="senhaUser" id="senhaUser"placeholder="Mínimo 8 carateres">
         </div>
         <form id="loginForm">
         
         <div class="botaologin">
-            <input type="button" value="Login" id="conflogin">
+            <button id="conflogin">Login</button>
+            <p id="mensagemErro"></p>
         </div>
-
-        
-        <label>
-              
-        </label><a href="#" id="forgotPassword"><br><br>Esqueceu sua senha?</a>
-        <p></p> 
-        </a><label class="fonts">Ainda não tem uma conta?<a href="#" id="CriarumaConta">Crie uma conta</a></label>
-
-        
+        <a href="esqueceusenha.html" id="forgotPassword">Esqueceu sua senha?</a>
+        </a><label class="fonts">Ainda não tem uma conta?</label>  <a href="criarconta.html" id="CriarumaConta">Crie uma conta</a>
+       
+        </div>
+    
     </main>
+    
+    <script>
+        document.getElementById("conflogin").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default form submission
 
+            // Get user input values
+            var email = document.getElementById("emailUser").value;
+            var password = document.getElementById("senhaUser").value;
+
+            // Dummy authentication check (replace with actual authentication logic)
+            if (email === "seuemail@example.com" && password === "suasenha") {
+                // Authentication successful, redirect to dashboard.html
+                window.location.href = "dashboard.html";
+            } else {
+                // Authentication failed, display error message
+                document.getElementById("mensagemErro").innerText = "Email ou senha incorretos. Por favor, tente novamente.";
+            }
+        });
+    </script>
     
 </body>
 </html>

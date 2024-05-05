@@ -4,6 +4,7 @@
     margin-left: 85px;
     margin-top: 40px;
 }
+
 /*
 img#fotolog{
     position: absolute;
@@ -31,7 +32,7 @@ img#fotolog{
     margin-left: 85px;
     margin-top: 30px;
 }
-input#esp_email{
+input#emailUser{
     margin-left: 100px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -43,11 +44,13 @@ input#esp_email{
     height: 50px;
     width: 500px;
     background-color: rgb(230, 230, 238);
+    border: none;
+    padding-left: 10px;
     
 
     
 }
-input#esp_email:hover{
+input#emailUser:hover{
     background-color: rgb(237, 237, 247);
 }
 .senha{
@@ -59,7 +62,7 @@ input#esp_email:hover{
     margin-top: 30px;
 
 }
-input#esp_senha{
+input#senhaUser{
     margin-left: 100px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -70,10 +73,13 @@ input#esp_senha{
     height: 50px;
     width: 500px;
     background-color: rgb(230, 230, 238);
+    border: none;
+    padding-left: 10px;
 }
 
-input#esp_senha:hover{
+input#senhaUser:hover{
     background-color: rgb(237, 237, 247);
+    
 }
 .see{
     font-family: "Roboto", sans-serif;
@@ -85,17 +91,19 @@ input#esp_senha:hover{
 }
 .entergoogle{
     font-family: "Roboto", sans-serif;
-    font: weight 350px;
+    font: weight 400px;
     font-style: normal;
     font-size: 15px;
     margin-top: 30px;
     margin-left: 85px;
+    
 }
 input#formato_buttom{
     border-radius: 200px;
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(221, 221, 221);
     height: 45px;
-    width: 280px;
+    width: 260px;
+    border:none;
 }
 input#formato_buttom:hover{
     background-color: rgb(227, 227, 227);
@@ -104,28 +112,29 @@ img#logogoogle{
     height: 25px;
     width: 25px;
     margin-top: 23px;
-    margin-left: 327px;
+    margin-left: 310px;
     position: absolute;
     justify-content: left;
     
 }
 .botaologin{
-   margin-top: 40px; 
-   margin-left: px;
-
+   margin-top: 35px; 
 }
-input#conflogin{
-background-color: rgb(17, 15, 57);
+button#conflogin{
+    background-image: linear-gradient( 45deg,rgb(42, 48, 72) 40%,rgb(8, 8, 34));
 height: 60px;
 width: 200px;
 border-radius: 100px;
 color: white;
 font-family: "Roboto", sans-serif;
 font-weight: 500;
+border: none;
+
 
 }
-input#conflogin:hover{
-    background-color: rgb(11, 11, 44);
+button#conflogin:hover{
+    background-image: linear-gradient( 45deg,rgb(42, 48, 72) 1%,rgb(8, 8, 34));
+    transition: 10s ;
 }
 
 
@@ -148,8 +157,9 @@ input#conflogin:hover{
   font-weight: 450;
   font-style: normal;
   font-size: 16px;
+  position: absolute;
+  top: 85%;
   
-  margin-top: 10px;
 }
 #forgotPassword:hover {
     color: #0059b8; 
@@ -157,23 +167,23 @@ input#conflogin:hover{
 .pagesquerda{
     
     position: absolute;
-    background-color: rgb(42, 48, 66);
+    background-image: linear-gradient( rgb(42, 48, 72) 1%,rgb(8, 8, 34)); 
     justify-content: left;
     height: 100%;
-    width: 5vh; 
+    width: 7vh; 
 }
 .pagdireita{
     position:absolute;
-    background-color: rgb(42, 48, 66);
+    background-image: linear-gradient( rgb(42, 48, 72) 1%,rgb(8, 8, 34));
     height: 100vh;
-    width: 5vh;
-    margin-left:1593px;
+    width: 13vh;
+    margin-left:1527px;
 
 }
 img#img2{
     position: absolute;
-    width: 110vh;
-    height: 75vh;
+    width: 107vh;
+    height: 73vh;
     justify-content: right;
     margin-left: 630px;
     margin-top: 100px;
@@ -184,8 +194,9 @@ img#img2{
     font-weight: 450;
     font-style: normal;
     font-size: 16px;
-    margin-left: 7px;
-    margin-top: 40px;
+    margin-left: 200px;
+    position: absolute;
+    top: 90.2%;
 }
 #CriarumaConta:hover{
     color: #0059b8;
@@ -193,4 +204,13 @@ img#img2{
 .fonts{
     font-family: "Roboto", sans-serif;
     font-weight: 410;
+    position: absolute;
+    margin-top: 85px;
+}
+p#mensagemErro{
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    margin-top: 10px;
+    font-size: 15px;
+
 }
