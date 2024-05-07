@@ -1,14 +1,14 @@
 .menucima{
-    background-color: rgba(42, 48, 66);
+    background-image: linear-gradient( 45deg,rgb(42, 48, 80) 1%,rgb(4, 12, 42));
     height: 9vh;
 }
 img#bandeirabrasil{
-    width: 21px;
-    height: 15px;
+    width: 2.6vh;
+    height: 0.9vw;
     position: absolute;
-    margin-left: 550px;
-    margin-top:29px ;
-    border-radius: 1000px;
+    left: 153vh;
+    top:3.5vh;
+    border-radius: 3px;
     
 }
 /*img#bandeirabrasil:hover{
@@ -21,10 +21,11 @@ img#bandeirabrasil{
     transition: 0.4s;
 }*/
 img#logoconforme{
-    margin-left: 130px;
+    height: 2.4vw;
+    width: 16vh;
     position: absolute;
-    margin-top: 7px;
-    
+    left: 8%;
+    top: 2.5%;
 }
 input#barrabuscar{
     margin-left: 330px;
@@ -46,43 +47,21 @@ input#barrabuscar{
 
     
 }
+
 input#barrabuscar:hover{
     background-color: white;
     transition: 0.1s;
     cursor: pointer;
     padding-left: 10px;
-}
-img#lupa{
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    border-radius: 400px;
-    left: 0;
-    margin-top: 28px;
-    margin-left: 308px;
     
 }
-img#conf{
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    right: 0;
-    margin-top: 21px;
-    margin-right: 150px;
+input#barrabuscar:focus{
+    background-color: white;
+    transition: 0.1s;
+    cursor: pointer;
+    padding-left: 10px;
     
-
 }
-/*img#conf:hover{
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    right: 0;
-    margin-top: 17px;
-    margin-right: 149px;
-    transition: 0.4s;
-}*/
-
-
 main{
     background-color: rgb(245, 245, 249);
     height: 91vh;
@@ -119,7 +98,7 @@ main{
     font-size: 13.7px;
     padding-left: 15px;
     padding-top: 15px;
-    color: rgb(75, 75, 75);
+    color: rgb(88, 88, 88);
 }
 .textd{
     position: absolute;
@@ -185,7 +164,7 @@ img#flecha3{
     font-size: 13.7px;
     padding-left: 15px;
     padding-top: 15px;
-    color: rgb(75, 75, 75);
+    color: rgb(88, 88, 88);
 }
 .bloco3{
     position: absolute;
@@ -201,7 +180,7 @@ img#flecha3{
     font-size: 13.7px;
     padding-left: 15px;
     padding-top: 15px;
-    color: rgb(75, 75, 75);
+    color: rgb(88, 88, 88);
 }
 .bloco4{
     position: absolute;
