@@ -21,11 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(function(){
-    $("#header").load("header.html");
-});
-</script>
+
 
     <style>
         input::placeholder {
@@ -55,9 +51,9 @@ $(function(){
         <div class="bloco0">
             <p class="textdashboard">DASHBOARD</p>
             <p class="pd">Paineis / Dashboard</p>
-            <p id="textd"><img src="../Imagens/Fotos/Icones/flecha.png" alt="" id="flecha1">Dashboard</p>
-            <p class="textdoações"><img src="../Imagens/Fotos/Icones/flecha.png" alt="" id="flecha2">Doações</p>
-            <p class="textapp"><img src="../Imagens/Fotos/Icones/flecha.png" alt="" id="flecha3">Aplicativos</p>
+            <p id="textd"><i class='bx bx-home-circle'></i>Dashboard</p>
+            <p id="textdoações"><i class='bx bx-donate-heart' ></i>Doações</p>
+           
         </div>
         <div class="bloco1">Arrecadação Mensal</div>
         <div class="bloco2">Recentes</div>
@@ -78,6 +74,16 @@ $(function(){
           // Adiciona um estilo de cursor diferente para indicar que o parágrafo é clicável
           document.getElementById("textd").style.cursor = "pointer";
         </script>
+        <script>
+            // Adiciona um listener de evento para o parágrafo clicável
+            document.getElementById("textdoações").addEventListener("click", function() {
+              // Redireciona para dashboard.html
+              window.location.href = "PainelDoações.html";
+            });
+        
+            // Adiciona um estilo de cursor diferente para indicar que o parágrafo é clicável
+            document.getElementById("textdoações").style.cursor = "pointer";
+          </script>
     </main>
     
 </body>
