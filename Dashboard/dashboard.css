@@ -169,10 +169,10 @@ img#flecha3{
 .bloco3{
     position: absolute;
     background-color: white;
-    height: 50vh;
+    height: 60vh;
     width: 57.8vw;
     margin-left: 650px;
-    margin-top: 240px;
+    top: 37%;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
