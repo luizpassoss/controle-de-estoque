@@ -100,7 +100,7 @@ main{
     padding-top: 15px;
     color: rgb(88, 88, 88);
 }
-.textd{
+p#textd{
     position: absolute;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
