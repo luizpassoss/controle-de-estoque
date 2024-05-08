@@ -1,13 +1,13 @@
 .menucima{
     background-image: linear-gradient( 45deg,rgb(42, 48, 80) 1%,rgb(4, 12, 42));
-    height: 9vh;
+    height: 8vh;
 }
 img#bandeirabrasil{
     width: 2.6vh;
     height: 0.9vw;
     position: absolute;
-    left: 153vh;
-    top:3.5vh;
+    left: 77%;
+    top:3.6%;
     border-radius: 3px;
     
 }
@@ -25,11 +25,11 @@ img#logoconforme{
     width: 16vh;
     position: absolute;
     left: 8%;
-    top: 2.5%;
+    top: 2%;
 }
 input#barrabuscar{
-    margin-left: 330px;
-    margin-top: 23px;
+    top: 2.5%;
+    left: 21.3%;
     border: 0;
     outline: 0;
     background: none;
@@ -42,10 +42,7 @@ input#barrabuscar{
     height: 28px;
     width: 300px;
     transition: 0.1s;
-    
-    
-
-    
+    position: absolute;  
 }
 
 input#barrabuscar:hover{
@@ -53,14 +50,12 @@ input#barrabuscar:hover{
     transition: 0.1s;
     cursor: pointer;
     padding-left: 10px;
-    
 }
 input#barrabuscar:focus{
     background-color: white;
     transition: 0.1s;
     cursor: pointer;
     padding-left: 10px;
-    
 }
 main{
     background-color: rgb(245, 245, 249);
@@ -69,8 +64,8 @@ main{
 }
 .bloco0{
     background-color: rgb(255, 255, 255);
-    height: 6vh;
-    width: 100vw;
+    height: 5%;
+    width: 100%;
     position: absolute;
 
 }
@@ -80,18 +75,18 @@ main{
     font-style: normal;
     font-size: 16px;
     position: absolute;
-    margin-top: 80px;
-    margin-left: 70px;
+    top: 18%;
+    left: 3%;
     color: rgb(102, 102, 102);
 }
 .bloco1{
     position: absolute;
     background-color: white;
-    height: 25vh;
-    width: 33vw;
-    margin-left: 70px;
-    margin-top: 120px;
-    border-radius: 5px;
+    height: 27vh;
+    width: 30vw;
+    top: 24%;
+    left: 3%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -106,9 +101,10 @@ p#textd{
     font-weight: 500;
     font-style: normal;
     font-size: 15px;
-    margin-left: 165px;
     color: rgb(102, 102, 102);
-    margin-top: 14px;
+    left: 10%;
+    top: 27%;
+    
 
 }
 p#textdoações{
@@ -117,9 +113,10 @@ p#textdoações{
     font-weight: 500;
     font-style: normal;
     font-size: 15px;
-    margin-left: 317px;
     color: rgb(102, 102, 102);
-    margin-top: 14px;
+    left: 20%;
+    top: 27%;
+    
 
 }
 .textapp{
@@ -153,11 +150,11 @@ img#flecha3{
 .bloco2{
     position: absolute;
     background-color: white;
-    height: 25vh;
-    width: 33vw;
-    margin-left: 70px;
-    margin-top: 350px;
-    border-radius: 5px;
+    height: 27vh;
+    width: 30vw;
+    left: 3%;
+    top: 54%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -169,11 +166,11 @@ img#flecha3{
 .bloco3{
     position: absolute;
     background-color: white;
-    height: 60vh;
-    width: 57.8vw;
-    margin-left: 650px;
+    height: 48vh;
+    width: 61vw;
     top: 37%;
-    border-radius: 5px;
+    left: 34.5%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -186,10 +183,10 @@ img#flecha3{
     position: absolute;
     background-color: white;
     height: 11vh;
-    width: 18vw;
-    margin-left: 650px;
-    margin-top: 120px;
-    border-radius: 5px;
+    width: 19vw;
+    left: 34.5%;
+    top: 24%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -202,10 +199,10 @@ img#flecha3{
     position: absolute;
     background-color: white;
     height: 11vh;
-    width: 18vw;
-    margin-left: 975px;
-    margin-top: 120px;
-    border-radius: 5px;
+    width: 19vw;
+    left: 55.5%;
+    top: 24%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -218,10 +215,10 @@ img#flecha3{
     position: absolute;
     background-color: white;
     height: 11vh;
-    width: 18vw;
-    margin-left: 1300px;
-    margin-top: 120px;
-    border-radius: 5px;
+    width: 19vw;
+    left: 76.5%;
+    top: 24%;
+    border-radius: 7px;
     font-family: "Roboto", sans-serif;
     font-weight: 520;
     font-style: normal;
@@ -235,12 +232,11 @@ img#flecha3{
     font-weight: 450;
     font-style: normal;
     font-size: 13px;
-    padding-left: 15px;
-    padding-top: 15px;
     color: rgb(102, 102, 102);
-    position: absolute; 
-    margin-top: 67px;
-    margin-left: 89.4vw;
+    position: absolute;
+    top: 20%;
+    left: 87%;
+   
 }
 img#login{
     position: absolute;
