@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        input::placeholder {
+            color: rgba(242, 242, 242, 0.673);  
+        }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <header>
+        <div>
+            <section class="menucima">
+                <div> <img src="../Imagens/Fotos/Icones/logoconforme2.png" alt="" id="logoconforme"> <input type="text" placeholder="Buscar..." id="barrabuscar" ></div>
+                <div><i class='bx bx-search-alt text-secondary fs-5 opacity-75 position-absolute' style="left: 18.6vw;top: 3.4vh;"></i>
+                    <img src="../Imagens/Fotos/Icones/bandeiragrande.jpg" alt="" id="bandeirabrasil">
+                    <i class='bx bx-fullscreen text-white fs-5 position-absolute' style="left: 80%; top: 3.3%;"></i>
+                    <i class='bx bx-bell text-white fs-5 position-absolute' style="left: 82.7%;top: 3.3%;"></i>
+                    <i class='bx bxs-user-circle text-white fs-2 position-absolute' style="left: 85.1%; top: 2.5%;"></i>
+                    <i class='bx bx-cog text-white fs-4 position-absolute' style="left: 94%; top: 3.1%;" ></i></div>
+                
+            </section>
+
+        </div>
+    </header>
+    <main>
+        
+        <div class="bloco0">
+            <p class="textdashboard">DASHBOARD</p>
+            <p class="pd">Paineis / Dashboard</p>
+            <p id="textd"><i class='bx bx-home-circle'></i>Dashboard</p>
+            <p id="textdoações"><i class='bx bx-donate-heart' ></i>Doações</p>
+           
+        </div>
+        <div class="bloco1">Arrecadação Mensal</div>
+        <div class="bloco2">Recentes</div>
+        <div class="bloco3">Arrecadações
+            <canvas id="meuGrafico"></canvas>
+
+            <script>
+                // Suponha que esses sejam seus dados do banco de dados
+                const dadosDoBancoDeDados = {
+                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
+                    datasets: [{
+                        label: 'Estoque',
+                        backgroundColor: 'rgb(150,180,200)',
+                        borderColor: 'rgb(50,180,200)',
+                        data: [12, 19, 3, 5, 2, 3], // Substitua esses dados pelos dados do seu banco de dados
+                    }]
+                };
+            
+                // Renderize o gráfico usando Chart.js
+                const ctx = document.getElementById('meuGrafico').getContext('2d');
+                const meuGrafico = new Chart(ctx, {
+                    type: 'line',
+                    data: dadosDoBancoDeDados,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+            
+        </div>
+        <div class="bloco4">Doações Total</div>
+        <div class="bloco5">Arrecadação Total</div>
+        <div class="bloco6">Pessoas Ajudas</div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+          // Adiciona um listener de evento para o parágrafo clicável
+          document.getElementById("textd").addEventListener("click", function() {
+            // Redireciona para dashboard.html
+            window.location.href = "dashboard.html";
+          });
+      
+          // Adiciona um estilo de cursor diferente para indicar que o parágrafo é clicável
+          document.getElementById("textd").style.cursor = "pointer";
+        </script>
+        <script>
+            // Adiciona um listener de evento para o parágrafo clicável
+            document.getElementById("textdoações").addEventListener("click", function() {
+              // Redireciona para dashboard.html
+              window.location.href = "PainelDoações.html";
+            });
+        
+            // Adiciona um estilo de cursor diferente para indicar que o parágrafo é clicável
+            document.getElementById("textdoações").style.cursor = "pointer";
+          </script>
+    </main>
+    
+</body>
+</html>
