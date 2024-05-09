@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
         </style>
@@ -29,6 +30,25 @@
         }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            .custom-button{
+                background-color: white;
+            }
+           
+            /* Altera a cor de fundo ao passar o mouse sobre o botão */
+            .custom-button:hover {
+                background-color: rgb(54, 73, 200);
+                color: rgb(255, 255, 255); /* Altera a cor do texto ao passar o mouse */
+                transition: 0.5s;
+            }
+            .custom-button:focus{
+                background-color: rgb(54, 73, 200);
+                color: rgb(255, 255, 255); /* Altera a cor do texto ao passar o mouse */
+                transition: 0.5s;
+            }
+    
+           
+        </style>
 
 </head>
 <body>
@@ -41,7 +61,7 @@
                     <img src="../Imagens/Fotos/Icones/bandeiragrande.jpg" alt="" id="bandeirabrasil">
                     <i class='bx bx-fullscreen text-white fs-5 position-absolute' style="left: 80%; top: 3.3%;"></i>
                     <i class='bx bx-bell text-white fs-5 position-absolute' style="left: 82.7%;top: 3.3%;"></i>
-                    <i class='bx bxs-user-circle text-white fs-2 position-absolute' style="left: 85.1%; top: 2.5%;"><p style="font-size: 40%;position: absolute; top: 30%; left: 140%; font-family: 'Roboto', sans-serif;font-weight: 400;">Caue</p><i class='bx bx-chevron-down text-white fs-5 position-absolute' style="left: 225%; top: 15%;"></i> </i>
+                    <i id="login"  class='bx bxs-user-circle text-white fs-2 position-absolute' style="left: 85.1%; top: 2.5%;"><p style="font-size: 40%;position: absolute; top: 30%; left: 140%; font-family: 'Roboto', sans-serif;font-weight: 400;">Caue</p><i class='bx bx-chevron-down text-white fs-5 position-absolute' style="left: 225%; top: 15%;"></i> </i>
                     <i class='bx bx-cog text-white fs-5 position-absolute' style="left: 94%; top: 3.1%;" ></i></div>
                 
             </section>
@@ -60,45 +80,119 @@
         <div class="bloco1">Arrecadação Mensal</div>
         <div class="bloco2">Recentes</div>
         <div class="bloco3">Arrecadações
-            <canvas id="meuGrafico" height="4vh" width="13vw"></canvas>
+            <canvas id="myChart" height="3vh" width="10vw"></canvas>
+            <button class="position-absolute custom-button" onclick="showWeekly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 72%;top: 3%;padding: 1%;">Semanal</button>
+            <button class="position-absolute custom-button" onclick="showMonthly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 82%;top: 3%;padding: 1%;" >Mensal</button>
+            <button class="position-absolute custom-button" onclick="showYearly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 92%;top: 3%;padding: 1%;">Anual</button>
 
-            <script>
-                
-                // Suponha que esses sejam seus dados do banco de dados
-                const dadosDoBancoDeDados = {
-                    labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                    datasets: [{
-                        label: 'Estoque',
-                        backgroundColor: 'rgb(100,180,200)',
-                        borderColor: 'rgb(50,180,200)',
-                        data: [20, 60, 44,33, 98, 93, 34, 46, 85, 72, 56, 40], // Substitua esses dados pelos dados do seu banco de dados
-                    }]
-                };
             
-                // Renderize o gráfico usando Chart.js
-                const ctx = document.getElementById('meuGrafico').getContext('2d');
-                const meuGrafico = new Chart(ctx, {
-                    type: 'bar',
-                    data: dadosDoBancoDeDados,
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    stepSize: 20, // Define o intervalo entre os valores verticais como 20
-                                    callback: function(value, index, values) {
-                                        return value.toString(); // Converte os valores para strings
-                                    },
-                                    max: 100, // Define o valor máximo do eixo Y como 100
-                                    min: 0 // Define o valor mínimo do eixo Y como 0
+            <script>
+                // Dados de exemplo para os gráficos
+                const data = {
+                    labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+                    objetos: [60, 70, 80, 75, 65, 55, 70, 80, 85, 90, 95, 100],
+                    alimentos: [40, 50, 60, 55, 45, 35, 50, 60, 65, 70, 75, 80],
+                    monetario: [20, 30, 40, 35, 25, 15, 30, 40, 45, 50, 55, 60]
+                };
+        
+                // Função para criar o gráfico
+                function createChart(labels, objetos, alimentos, monetario) {
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    const myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Objetos',
+                                data: objetos,
+                                borderColor: '#3e3ec2',
+                                backgroundColor: '#3e3ec2',
+                                
+                            }, {
+                                label: 'Alimentos',
+                                data: alimentos,
+                                borderColor: '#ffbf00 ',
+                                backgroundColor: '#ffbf00 ',
+                            }, {
+                                label: 'Monetário',
+                                data: monetario,
+                                borderColor: '#2e8b57',
+                                backgroundColor: '#2e8b57',
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    min: 0,
+                                    max: 100
                                 }
                             }
                         }
+                    });
+                }
+        
+                // Mostrar valores semanais
+                function showWeekly() {
+                    const weeksData = getWeeklyData(data);
+                    createChart(weeksData.labels, weeksData.objetos, weeksData.alimentos, weeksData.monetario);
+                }
+        
+                // Mostrar valores mensais
+                function showMonthly() {
+                    createChart(data.labels, data.objetos, data.alimentos, data.monetario);
+                }
+        
+                // Mostrar valores anuais
+                function showYearly() {
+                    const yearlyData = getYearlyData(data);
+                    createChart(yearlyData.labels, yearlyData.objetos, yearlyData.alimentos, yearlyData.monetario);
+                }
+        
+                // Função para obter dados semanais
+                function getWeeklyData(data) {
+                    const weeksData = {
+                        labels: [],
+                        objetos: [],
+                        alimentos: [],
+                        monetario: []
+                    };
+        
+                    // Calcula a média dos valores para cada semana
+                    for (let i = 0; i < data.labels.length; i++) {
+                        const avgObjetos = data.objetos[i] / 4; // Supondo 4 semanas por mês
+                        const avgAlimentos = data.alimentos[i] / 4;
+                        const avgMonetario = data.monetario[i] / 4;
+        
+                        for (let j = 1; j <= 4; j++) {
+                            weeksData.labels.push(`Semana ${j} - ${data.labels[i]}`);
+                            weeksData.objetos.push(avgObjetos);
+                            weeksData.alimentos.push(avgAlimentos);
+                            weeksData.monetario.push(avgMonetario);
+                        }
                     }
-                });
+        
+                    return weeksData;
+                }
+        
+                // Função para obter dados anuais
+                function getYearlyData(data) {
+                    const yearlyData = {
+                        labels: ['Anual'],
+                        objetos: [average(data.objetos)],
+                        alimentos: [average(data.alimentos)],
+                        monetario: [average(data.monetario)]
+                    };
+                    return yearlyData;
+                }
+        
+                // Função para calcular a média de um array
+                function average(arr) {
+                    return arr.reduce((acc, val) => acc + val, 0) / arr.length;
+                }
+        
+                // Inicializar o gráfico com valores mensais
+                createChart(data.labels, data.objetos, data.alimentos, data.monetario);
             </script>
-            
-            
         </div>
         <div class="bloco4">Doações Total</div>
         <div class="bloco5">Arrecadação Total</div>
@@ -126,6 +220,11 @@
             // Adiciona um estilo de cursor diferente para indicar que o parágrafo é clicável
             document.getElementById("textdoações").style.cursor = "pointer";
           </script>
+          <script>// Adiciona um listener de evento para o parágrafo clicável
+            document.getElementById("login").addEventListener("click", function() {
+              // Redireciona para dashboard.html
+              window.location.href = "../Login/login.html";
+            });</script>
           <div class="position-absolute" style="background-color: rgb(242, 242, 242); top: 94%; height: 6%; width: 100%;"><p class="position-absolute" style="top: 35%;left: 10%; font-size: 65%;font-family: 'Roboto', sans-serif; color: rgb(130, 130, 130);">2024 <img src="../Imagens/Fotos/Icones/download-removebg-preview.png" alt="" height="3%" width="3%"> Instituto Conforme.</p><p class="position-absolute"style="top: 35%;left: 80%; font-size: 65%;font-family: 'Roboto', sans-serif;color: rgb(130, 130, 130);">Desenvolvido por UHDC.</p></div>
     </main>
     
