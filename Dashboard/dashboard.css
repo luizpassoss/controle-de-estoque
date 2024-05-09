@@ -11,15 +11,7 @@ img#bandeirabrasil{
     border-radius: 3px;
     
 }
-/*img#bandeirabrasil:hover{
-    width: 24px;
-    height: 18px;
-    position: absolute;
-    margin-left: 549px;
-    margin-top:24px ;
-    border-radius: 1000px;
-    transition: 0.4s;
-}*/
+
 img#logoconforme{
     height: 2.4vw;
     width: 16vh;
@@ -37,7 +29,7 @@ input#barrabuscar{
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: rgb(0, 0, 0);
-    /*background-color: white;*/
+
     border-radius: 5px;
     height: 28px;
     width: 300px;
@@ -104,7 +96,7 @@ p#textd{
     color: rgb(102, 102, 102);
     left: 10%;
     top: 27%;
-    
+
 
 }
 p#textdoações{
@@ -116,7 +108,7 @@ p#textdoações{
     color: rgb(102, 102, 102);
     left: 20%;
     top: 27%;
-    
+
 
 }
 .textapp{
@@ -235,8 +227,8 @@ img#flecha3{
     color: rgb(102, 102, 102);
     position: absolute;
     top: 20%;
-    left: 87%;
-   
+    left: 87%;  
+
 }
 img#login{
     position: absolute;
