@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="dashboard.js">
+    <script src="dashboard.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -81,12 +81,12 @@
         <div class="bloco2">Recentes</div>
         <div class="bloco3">Arrecadações
             <canvas id="myChart" height="3vh" width="10vw"></canvas>
-            <button class="position-absolute custom-button" onclick="showWeekly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 72%;top: 3%;padding: 1%;">Semanal</button>
-            <button class="position-absolute custom-button" onclick="showMonthly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 82%;top: 3%;padding: 1%;" >Mensal</button>
-            <button class="position-absolute custom-button" onclick="showYearly()" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 92%;top: 3%;padding: 1%;">Anual</button>
-
+            <button class="position-absolute custom-button" onclick="updateChart('weekly')" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 72%;top: 3%;padding: 1%;">Semanal</button>
+            <button class="position-absolute custom-button" onclick="updateChart('monthly')"style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 82%;top: 3%;padding: 1%;" >Mensal</button>
+            <button class="position-absolute custom-button" onclick="updateChart('yearly')" style="border: 0;border-radius: 5px;font-size: 90%;font-family: 'Roboto', sans-serif;font-weight: 500;left: 92%;top: 3%;padding: 1%;">Anual</button>
 
             <script>
+                
                 // Dados de exemplo para os gráficos
                 const data = {
                     labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
@@ -94,7 +94,9 @@
                     alimentos: [40, 50, 60, 55, 45, 35, 50, 60, 65, 70, 75, 80],
                     monetario: [20, 30, 40, 35, 25, 15, 30, 40, 45, 50, 55, 60]
                 };
-
+            
+                let currentOption = 'monthly'; // Opção inicial
+            
                 // Função para criar o gráfico
                 function createChart(labels, objetos, alimentos, monetario) {
                     const ctx = document.getElementById('myChart').getContext('2d');
@@ -107,7 +109,6 @@
                                 data: objetos,
                                 borderColor: '#3e3ec2',
                                 backgroundColor: '#3e3ec2',
-
                             }, {
                                 label: 'Alimentos',
                                 data: alimentos,
@@ -130,24 +131,21 @@
                         }
                     });
                 }
-
-                // Mostrar valores semanais
-                function showWeekly() {
-                    const weeksData = getWeeklyData(data);
-                    createChart(weeksData.labels, weeksData.objetos, weeksData.alimentos, weeksData.monetario);
+            
+                // Função para atualizar o gráfico com base na opção selecionada
+                function updateChart(option) {
+                    currentOption = option;
+                    if (option === 'weekly') {
+                        const weeklyData = getWeeklyData(data);
+                        createChart(weeklyData.labels, weeklyData.objetos, weeklyData.alimentos, weeklyData.monetario);
+                    } else if (option === 'monthly') {
+                        createChart(data.labels, data.objetos, data.alimentos, data.monetario);
+                    } else if (option === 'yearly') {
+                        const yearlyData = getYearlyData(data);
+                        createChart(yearlyData.labels, yearlyData.objetos, yearlyData.alimentos, yearlyData.monetario);
+                    }
                 }
-
-                // Mostrar valores mensais
-                function showMonthly() {
-                    createChart(data.labels, data.objetos, data.alimentos, data.monetario);
-                }
-
-                // Mostrar valores anuais
-                function showYearly() {
-                    const yearlyData = getYearlyData(data);
-                    createChart(yearlyData.labels, yearlyData.objetos, yearlyData.alimentos, yearlyData.monetario);
-                }
-
+            
                 // Função para obter dados semanais
                 function getWeeklyData(data) {
                     const weeksData = {
@@ -156,24 +154,28 @@
                         alimentos: [],
                         monetario: []
                     };
-
-                    // Calcula a média dos valores para cada semana
+            
                     for (let i = 0; i < data.labels.length; i++) {
-                        const avgObjetos = data.objetos[i] / 4; // Supondo 4 semanas por mês
-                        const avgAlimentos = data.alimentos[i] / 4;
-                        const avgMonetario = data.monetario[i] / 4;
-        
+                        const month = data.labels[i];
+                        const objetos = data.objetos[i];
+                        const alimentos = data.alimentos[i];
+                        const monetario = data.monetario[i];
+            
                         for (let j = 1; j <= 4; j++) {
-                            weeksData.labels.push(`Semana ${j} - ${data.labels[i]}`);
+                            const avgObjetos = objetos / 4;
+                            const avgAlimentos = alimentos / 4;
+                            const avgMonetario = monetario / 4;
+            
+                            weeksData.labels.push(`Semana ${j} - ${month}`);
                             weeksData.objetos.push(avgObjetos);
                             weeksData.alimentos.push(avgAlimentos);
                             weeksData.monetario.push(avgMonetario);
                         }
                     }
-
+            
                     return weeksData;
                 }
-
+            
                 // Função para obter dados anuais
                 function getYearlyData(data) {
                     const yearlyData = {
@@ -184,14 +186,14 @@
                     };
                     return yearlyData;
                 }
-
+            
                 // Função para calcular a média de um array
                 function average(arr) {
                     return arr.reduce((acc, val) => acc + val, 0) / arr.length;
                 }
-
-                // Inicializar o gráfico com valores mensais
-                createChart(data.labels, data.objetos, data.alimentos, data.monetario);
+            
+                // Inicializar o gráfico com a opção inicial
+                updateChart(currentOption);
             </script>
 
         </div>
@@ -226,7 +228,7 @@
               // Redireciona para dashboard.html
               window.location.href = "../Login/login.html";
             });</script>
-          <div class="position-absolute" style="background-color: rgb(242, 242, 242); top: 94%; height: 6%; width: 100%;"><p class="position-absolute" style="top: 35%;left: 10%; font-size: 65%;font-family: 'Roboto', sans-serif; color: rgb(130, 130, 130);">2024 <img src="../Imagens/Fotos/Icones/download-removebg-preview.png" alt="" height="3%" width="3%"> Instituto Conforme.</p><p class="position-absolute"style="top: 35%;left: 80%; font-size: 65%;font-family: 'Roboto', sans-serif;color: rgb(130, 130, 130);">Desenvolvido por UHDC.</p></div>
+          <div class="position-absolute" style="background-color: rgb(242, 242, 242); top: 94%; height: 6%; width: 100%;"><p class="position-absolute" style="top: 32%;left: 10%; font-size: 65%;font-family: 'Roboto', sans-serif; color: rgb(130, 130, 130);">2024 <i class='bx bx-copyright' style="top:50%;"></i> Instituto Conforme.</p><p class="position-absolute"style="top: 32%;left: 80%; font-size: 65%;font-family: 'Roboto', sans-serif;color: rgb(130, 130, 130);">Desenvolvido por UHDC.</p></div>
     </main>
     
 </body>
